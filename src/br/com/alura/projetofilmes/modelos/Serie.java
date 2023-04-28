@@ -1,6 +1,8 @@
 package br.com.alura.projetofilmes.modelos;
 
-public class Serie extends Titulo {
+import br.com.alura.projetofilmes.calculo.Classificavel;
+
+public class Serie extends Titulo implements Classificavel {
     private int temporadas;
     private boolean ativa;
     private int episodiosPorTemporada;
@@ -42,5 +44,10 @@ public class Serie extends Titulo {
     @Override
     public int getDuracaoEmMinutos() {
         return temporadas * episodiosPorTemporada * minutosPorTemporada;
+    }
+
+    @Override
+    public int getClassificacao() {
+        return 0;
     }
 }

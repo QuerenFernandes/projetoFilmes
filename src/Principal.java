@@ -1,4 +1,6 @@
 import br.com.alura.projetofilmes.calculo.CalculadoraDeTempo;
+import br.com.alura.projetofilmes.calculo.FiltroRecomendacao;
+import br.com.alura.projetofilmes.modelos.Episodio;
 import br.com.alura.projetofilmes.modelos.Filme;
 import br.com.alura.projetofilmes.modelos.Serie;
 
@@ -41,6 +43,16 @@ public class Principal {
         calculadoraDeTempo.inclui(outroFilme);
         calculadoraDeTempo.inclui(serie);
         System.out.println(calculadoraDeTempo.getTempoTotal());
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(serie);
+        episodio.setTotalDeVisualizacoes(500);
+
+        filtro.filtra(serie);
 
     }
 }
