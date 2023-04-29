@@ -4,6 +4,8 @@ import br.com.alura.projetofilmes.modelos.Episodio;
 import br.com.alura.projetofilmes.modelos.Filme;
 import br.com.alura.projetofilmes.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         Filme meuFilme = new Filme();
@@ -53,6 +55,21 @@ public class Principal {
         episodio.setTotalDeVisualizacoes(500);
 
         filtro.filtra(serie);
+
+        Filme novoFilme = new Filme();
+        novoFilme.setNome("Star Wars");
+        novoFilme.setAnoDeLancamento(2003);
+        novoFilme.avalia(10);
+        novoFilme.setDuracaoEmMinutos(210);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(novoFilme);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+
+        System.out.println("Tamanho da Lista " + listaDeFilmes.size());
+        System.out.println("Primeiro Filme: " + listaDeFilmes.get(0).getNome());
+        System.out.println(listaDeFilmes);
 
     }
 }
