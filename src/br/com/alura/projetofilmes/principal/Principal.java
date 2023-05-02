@@ -1,3 +1,5 @@
+package br.com.alura.projetofilmes.principal;
+
 import br.com.alura.projetofilmes.calculo.CalculadoraDeTempo;
 import br.com.alura.projetofilmes.calculo.FiltroRecomendacao;
 import br.com.alura.projetofilmes.modelos.Episodio;
@@ -8,9 +10,7 @@ import java.util.ArrayList;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("Eragon");
-        meuFilme.setAnoDeLancamento(2006);
+        Filme meuFilme = new Filme("Eragon", 2006);
         meuFilme.setDuracaoEmMinutos(180);
         meuFilme.setCategoriaDoFilme("Fantasia");
 
@@ -24,18 +24,14 @@ public class Principal {
         System.out.println(meuFilme.pegaMedia());
         System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
 
-        Serie serie = new Serie();
-        serie.setNome("Cake Boss");
-        serie.setAnoDeLancamento(2017);
+        Serie serie = new Serie("Cake Boss", 2017);
         serie.setEpisodiosPorTemporada(8);
         serie.setTemporadas(10);
         serie.setMinutosPorTemporada(20);
         System.out.println("Duração para maratonar: " + serie.getNome() + ": " + serie.getDuracaoEmMinutos() + " minutos.");
 
 
-        Filme outroFilme = new Filme();
-        outroFilme.setNome("Senhor dos Aneis");
-        outroFilme.setAnoDeLancamento(2000);
+        Filme outroFilme = new Filme("Senhor dos Aneis", 2000);
         outroFilme.setDuracaoEmMinutos(200);
         outroFilme.setCategoriaDoFilme("Fantasia");
 
@@ -56,9 +52,7 @@ public class Principal {
 
         filtro.filtra(serie);
 
-        Filme novoFilme = new Filme();
-        novoFilme.setNome("Star Wars");
-        novoFilme.setAnoDeLancamento(2003);
+        Filme novoFilme = new Filme("Star Wars", 2003);
         novoFilme.avalia(10);
         novoFilme.setDuracaoEmMinutos(210);
 

@@ -1,6 +1,6 @@
 package br.com.alura.projetofilmes.modelos;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo>{
     private String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
@@ -8,6 +8,12 @@ public class Titulo {
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
     private String categoriaDoFilme;
+
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
 
     public String getNome() {
         return nome;
@@ -67,6 +73,10 @@ public class Titulo {
         return somaDasAvaliacoes / totalDeAvaliacoes;
     }
 
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
+    }
 }
 // public: Uma classe, atributo ou método declarado como public pode ser acessado por qualquer classe em qualquer pacote.
 // private: só pode ser acessado dentro da própria classe
