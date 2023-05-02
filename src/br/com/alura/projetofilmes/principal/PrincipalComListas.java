@@ -6,6 +6,8 @@ import br.com.alura.projetofilmes.modelos.Titulo;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -17,7 +19,7 @@ public class PrincipalComListas {
         novoFilme.avalia(6);
         Serie serie = new Serie("Cake Boss", 2017);
 
-        ArrayList<Titulo> listaDeAssistidos = new ArrayList<>();
+        List<Titulo> listaDeAssistidos = new ArrayList<>();
         listaDeAssistidos.add(novoFilme);
         listaDeAssistidos.add(meuFilme);
         listaDeAssistidos.add(outroFilme);
@@ -44,6 +46,11 @@ public class PrincipalComListas {
 
         Collections.sort(listaDeAssistidos);
         System.out.println("Lista de títulos ordenados: " + listaDeAssistidos);
+
+        listaDeAssistidos.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+
+        System.out.println("Ordenando por ano: ");
+        System.out.println(listaDeAssistidos);
 
     }
 }
