@@ -1,5 +1,6 @@
 package br.com.alura.projetofilmes.modelos;
 
+import br.com.alura.projetofilmes.excecao.ErroDeConversaoDeAnoException;
 import com.google.gson.annotations.SerializedName;
 
 public class Titulo implements Comparable<Titulo>{
@@ -20,8 +21,12 @@ public class Titulo implements Comparable<Titulo>{
 
     public Titulo(TituloOmdb meuTituloOmdb) {
         this.nome = meuTituloOmdb.title();
+        if(meuTituloOmdb.year().length() > 4) {
+            throw new ErroDeConversaoDeAnoException("Não consegui converter " +
+                    "o ano porque tem mais de 4 caracteres.");
+        }
         this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
-        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0, 2));
+        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0, 3));
     }
 
 
@@ -91,9 +96,9 @@ public class Titulo implements Comparable<Titulo>{
 
     @Override
     public String toString() {
-        return  "nome='" + nome + '\'' +
-                ", anoDeLancamento=" + anoDeLancamento + ","
-                + "duração: " + duracaoEmMinutos;
+        return  "(Filme: " + nome +
+                ", Ano de Lançamento: " + anoDeLancamento + ","
+                + "duração: " + duracaoEmMinutos + ")";
     }
 }
 // public: Uma classe, atributo ou método declarado como public pode ser acessado por qualquer classe em qualquer pacote.
