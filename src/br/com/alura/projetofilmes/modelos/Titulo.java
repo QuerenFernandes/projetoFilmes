@@ -1,5 +1,7 @@
 package br.com.alura.projetofilmes.modelos;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Titulo implements Comparable<Titulo>{
     private String nome;
     private int anoDeLancamento;
@@ -12,6 +14,14 @@ public class Titulo implements Comparable<Titulo>{
     public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
+    }
+
+    // código omitido…
+
+    public Titulo(TituloOmdb meuTituloOmdb) {
+        this.nome = meuTituloOmdb.title();
+        this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
+        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0, 2));
     }
 
 
@@ -75,7 +85,15 @@ public class Titulo implements Comparable<Titulo>{
 
     @Override
     public int compareTo(Titulo outroTitulo) {
+
         return this.getNome().compareTo(outroTitulo.getNome());
+    }
+
+    @Override
+    public String toString() {
+        return  "nome='" + nome + '\'' +
+                ", anoDeLancamento=" + anoDeLancamento + ","
+                + "duração: " + duracaoEmMinutos;
     }
 }
 // public: Uma classe, atributo ou método declarado como public pode ser acessado por qualquer classe em qualquer pacote.
