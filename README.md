@@ -1,17 +1,8 @@
-# Nome do meu projeto
+# Projeto Filmes
 
-Rápida descrição do objetivo de fazer esse projeto
-
-| :placard: Vitrine.Dev |     |
-| -------------  | --- |
-| :sparkles: Nome        | **Titulo do meu projeto**
-| :label: Tecnologias | java, html, ruby, c# (tecnologias utilizadas)
-| :rocket: URL         | https://url-deploy.com.br
-| :fire: Desafio     | https://url-do-desafio.com.br
+Construí uma aplicação baseada em OO que consome os dados de uma API de filmes, chamada OMDB. Quando executada, a aplicação solicita as informações e converte os dados usando a biblioteca GSON e os disponibiliza para o usuário. Também fizemos o processo inverso, onde pegamos os dados em GSON e transformamos em JSON, salvando num arquivo específico!
 
 <!-- Inserir imagem com a #vitrinedev ao final do link -->
-![](https://via.placeholder.com/1200x500.png?text=imagem+lindona+do+meu+projeto#vitrinedev)
+![previa](https://user-images.githubusercontent.com/95857175/236172651-b8233f8f-e1ec-4e5c-9226-4fe16ea9ef37.png#vitrinedev)
 
-## Detalhes do projeto
 
-Textos e imagens que descrevam seu projeto, suas conquistas, seus desafios, próximos passos, etc...
